@@ -1,29 +1,25 @@
+// variable environement
+var $toolsZone = $('#toolsZone');
+var $drawZone  = $('#drawZone');
+var $pixel = "";
+var $classColor = "";
+var $tosubmit = "";
+var $adder = "";
+var $userColor ="";
+
+//Tools...
 function Tools(name){
 	this.name = name || 'outil box';
 	this.active = false;
-}
+};
 Tools.prototype = {
 	buttonUI : function(obj){
-		$('#toolsZone').append('<button class='+obj.name+'>'+obj.name+'</button>')
+		$toolsZone.append('<button class='+obj.name+'>'+obj.name+'</button>')
 		$('.'+obj.name).on('click', function(){
-			chooseTool([paint,pen,rubber, eraser])
+			initTool([paint,pen,rubber, eraser])// set tools false by default;
 			obj.active = true;
-			$('.pixel').unbind()	
-			if (paint.active === true){
-				paint.paint(colorPicker.color);
-			}
-			if (pen.active === true){
-				pen.pen(colorPicker.color);
-			}
-			if (rubber.active === true){
-				rubber.rub();
-			}
-			if (eraser.active === true){
-				eraser.eraseAll();
-			}
-
-
+			$pixel.off();
+			checkIfActive([paint,pen,rubber, eraser],colorPicker,['paint','pen','rubber','eraser'])
 		});
-
 	}
-}
+};

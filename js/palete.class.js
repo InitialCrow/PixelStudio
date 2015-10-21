@@ -1,3 +1,4 @@
+// Palete...
 function Palete(color, width, height){
 	this.color = color || 'black';
 	this.width = width || '50';
@@ -6,29 +7,18 @@ function Palete(color, width, height){
 Palete.prototype = {
 	init : function(color){
 		for (var i = 0; i < color.length; i++) {
-			var self = this;
-			$('#toolsZone').append("<div class=color"+i+" data="+color[i]+"></div>")
-			$('.color'+i).css({
+			var self = this; // stack the objectColor in self
+			$toolsZone.append("<div class=color"+i+" data="+color[i]+"></div>");// create palete and put the color in attribute data
+			$classColor = $('.color'+i);
+			$classColor.css({
 				'background-color':this.color[i],
 				'width':this.width,
 				'height':this.height,
-			})
-
-			$('.color'+i).on('click', function(){
+			});
+			$classColor.on('click', function(){
 				self.color = $(this).attr('data');
-				if (paint.active === true){
-					paint.paint(self.color);
-				}
-				if (pen.active === true){
-					pen.pen(self.color);
-				}
-				if (rubber.active === true){
-					rubber.rub();
-				}
-				
-			})
-		};
-		
-	}
-	
-}
+				checkIfActive([paint,pen,rubber, eraser],self,['paint','pen','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param	
+			});
+		};		
+	}	
+};

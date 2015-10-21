@@ -4,6 +4,5 @@ function EraseAll(name){
 }
 EraseAll.prototype = Object.create(Tools.prototype);
 EraseAll.prototype.eraseAll = function(){
-	$('.pixel').css('background-color','white');
+	$pixel.css('background-color','inherit');
 }
-

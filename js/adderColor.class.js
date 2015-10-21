@@ -1,44 +1,41 @@
-function AdderColor(name, color){
+function AdderColor(name){
 	this.name = name;
-	this.color  = color;
 }
 AdderColor.prototype = {
 	adderUI : function(obj){
-		$('#toolsZone').append('<form class=\'tosubmit\'></form>');
-		$('.tosubmit').append('<input class=\'adder\'></input>');
-		$('.tosubmit').append('<button type=\'submit\'>ok</button>');
+		$toolsZone.append('<form class=\'tosubmit\'></form>'); // create toolzone for user
+		$tosubmit  = $('.tosubmit');
+		$tosubmit.append('<input class=\'adder\'></input>');// create input for colorUser
+		$adder = $('.adder');
+		$tosubmit.append('<button type=\'submit\'>ok</button>');// create validate button
 	},
 	addColor : function(obj){
-		$('.tosubmit').submit(function(evt){
-			evt.preventDefault();
-			var $color = $('.adder').val();
-			obj.color.push($color);
+		$tosubmit.submit(function(evt){
+			// on validate color ....
+			
+			evt.preventDefault(); // stop refresh on a page
+			var $color = $adder.val();// stack value of user must be a validate color
+			obj.color.push($color);// push this value on User Palete's
+			
 			for (var i = 0; i < obj.color.length; i++) {
-				$('.userColor'+i).remove();
-				$('#toolsZone').append("<div class= userColor"+i+" data="+obj.color[i]+"></div>")
-				$('.userColor'+i).css({
+				
+				$('.userColor'+i).remove(); // remove previous Palete of user
+				
+				$('#toolsZone').append("<div class= userColor"+i+" data="+obj.color[i]+"></div>"); // set new color of user
+
+				$userColor = $('.userColor'+i); // stack this color
+
+				$userColor.css({
 					'background-color': obj.color[i],
 					'width':obj.width,
 					'height':obj.height,
-				})
-				$('.userColor'+i).on('click', function(){
-				self.color = $(this).attr('data');
-				if (paint.active === true){
-					paint.paint(self.color);
-				}
-				if (pen.active === true){
-					pen.pen(self.color);
-				}
-				if (rubber.active === true){
-					rubber.rub();
-				}
-				
-			})
-				
-			};
-			
-			console.log(obj.color)
+				})// set the palete UI
 
+				$userColor.on('click', function(){
+					self.color = $(this).attr('data');
+					checkIfActive([paint,pen,rubber, eraser],self,['paint','pen','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param
+				});	
+			};
 		});
 	}
-}
+};
