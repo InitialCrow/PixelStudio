@@ -2,7 +2,7 @@
 function Pixel(width, height, color){
 	this.width = width || '50';
 	this.height = height || '50';
-	this.color = color || 'white';
+	this.color = color || 'inherit';
 }
 Pixel.prototype ={
 	drawBoard : function(number){ // draw a number of div -- draw a board
