@@ -5,21 +5,5 @@ function Paint(name){
 }
 Paint.prototype = Object.create(Tools.prototype);
 Paint.prototype.paint = function( color){
-			var isdrag = false;
-			var click = false;
-
-			$pixel.on('mousedown', function(){
-				click = true;
-				$(this).css('background-color', color);
-
-			}).on('mousemove', function(){
-				isdrag = true;
-				if ( click === true && isdrag === true){	
-					$(this).css('background-color', color);
-				}	
-
-			}).on('mouseup', function(){
-				click = false;
-				isdrag = false;
-			});			
+	painting(color,'0%');// waring painting in function.js not link with object		
 }

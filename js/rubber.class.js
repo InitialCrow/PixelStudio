@@ -6,6 +6,6 @@ function Rubber(name){
 Rubber.prototype = Object.create(Tools.prototype);
 Rubber.prototype.rub = function(){
 	$pixel.on('mousedown',function(){
-		$(this).css('background','none');	
+		$(this).css({'background-color':'inherit','border-radius':'0'});
 	});
 }

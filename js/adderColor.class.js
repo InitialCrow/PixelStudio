@@ -33,7 +33,7 @@ AdderColor.prototype = {
 
 				$userColor.on('click', function(){
 					self.color = $(this).attr('data');
-					checkIfActive([paint,pen,rubber, eraser],self,['paint','pen','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param
+					checkIfActive([paint,pen,arrounder,rubber, eraser],self,['paint','pen','arrounder','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param
 				});	
 			};
 		});

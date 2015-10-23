@@ -3,6 +3,7 @@ function EraseAll(name){
 	this.name = name;
 }
 EraseAll.prototype = Object.create(Tools.prototype);
-EraseAll.prototype.eraseAll = function(){
-	$pixel.css('background-color','inherit');
+EraseAll.prototype.eraseAll = function(){// reset pixels
+	$pixel.css({'background-color':'inherit',
+				'border-radius':'0'});
 }

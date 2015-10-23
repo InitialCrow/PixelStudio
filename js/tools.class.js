@@ -20,10 +20,10 @@ Tools.prototype = {
 	buttonUI : function(obj){
 		$toolsZone.append('<button class='+obj.name+'>'+obj.name+'</button>')
 		$('.'+obj.name).on('click', function(){
-			initTool([paint,pen,rubber, eraser, inspirate]);// set tools false by default;
+			initTool([paint,pen,arrounder,rubber,eraser, inspirate]);// set tools false by default;
 			obj.active = true;
 			$pixel.off();
-			checkIfActive([paint,pen,rubber, eraser,inspirate],colorPicker,['paint','pen','rubber','eraser','InspirationMode']);
+			checkIfActive([paint,pen,arrounder,rubber,eraser,inspirate],colorPicker,['paint','pen','arrounder','rubber','eraser','InspirationMode']);// ative tool when I click
 		});
 	}
 };
