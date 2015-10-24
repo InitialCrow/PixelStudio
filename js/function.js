@@ -68,3 +68,10 @@ function change() { // run infinit loop of increment
 function stopColor() {// stop anim
 	clearInterval(intervalID);
 }
+function uiSelector(){
+	$color = $('.color');
+	$color.on('click',function(){
+		$color.css('border', 'none');
+		$(this).css('border','2px blue solid');
+	});
+}

@@ -3,6 +3,7 @@ var $body  	   = $('body');
 var $toolsZone = $('#toolsZone');
 var $drawZone  = $('#drawZone');
 var $music     = $('audio');
+var $color = "";
 var $pixel = "";
 var $classColor = "";
 var $tosubmit = "";

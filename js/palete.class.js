@@ -8,7 +8,7 @@ Palete.prototype = {
 	init : function(color){
 		for (var i = 0; i < color.length; i++) {
 			var self = this; // stack the objectColor in self
-			$toolsZone.append("<div class=color"+i+" data="+color[i]+"></div>");// create palete and put the color in attribute data
+			$toolsZone.append("<div class='color"+i+" color'  data="+color[i]+"></div>");// create palete and put the color in attribute data
 			$classColor = $('.color'+i);
 			$classColor.css({
 				'background-color':this.color[i],
@@ -17,7 +17,8 @@ Palete.prototype = {
 			});
 			$classColor.on('click', function(){
 				self.color = $(this).attr('data');
-				checkIfActive([paint,pen,arrounder,rubber, eraser],self,['paint','pen','arrounder','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param	
+				checkIfActive([paint,pen,arrounder,rubber, eraser],self,['paint','pen','arrounder','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param
+				uiSelector()// bordering when select color
 			});
 		};		
 	}	

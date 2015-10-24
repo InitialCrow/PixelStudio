@@ -1,4 +1,4 @@
-// pixelStudio .. 0.5
+// pixelStudio .. 0.5.1
 var pixelStudio= {
 		init : function(obj,size, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10){
 			obj.drawBoard(size);// draw a board for paint

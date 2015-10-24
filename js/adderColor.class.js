@@ -22,7 +22,7 @@ AdderColor.prototype = {
 				
 				$('.userColor'+i).remove(); // remove previous Palete of user
 				
-				$tosubmit.append("<div class= userColor"+i+" data="+obj.color[i]+"></div>"); // set new color of user
+				$tosubmit.append("<div class= 'userColor"+i+" color'data="+obj.color[i]+"></div>"); // set new color of user
 
 				$userColor = $('.userColor'+i); // stack this color
 
@@ -35,7 +35,8 @@ AdderColor.prototype = {
 				$userColor.on('click', function(){
 					self.color = $(this).attr('data');
 					checkIfActive([paint,pen,arrounder,rubber, eraser],self,['paint','pen','arrounder','rubber','eraser'])// check if tool is actif if is put the color on obj 2" param
-				});	
+				});
+				uiSelector()// bordering when select color	
 			};
 		});
 	}
