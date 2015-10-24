@@ -17,8 +17,11 @@ function Tools(name){
 	this.active = false;
 };
 Tools.prototype = {
+	h2ForToolsBox : function(){
+		$toolsZone.append('<h2> Choose your tool </h2>')
+	},
 	buttonUI : function(obj){
-		$toolsZone.append('<button class='+obj.name+'>'+obj.name+'</button>')
+		$toolsZone.append("<button class='btn btn-primary "+obj.name+"'>"+obj.name+"</button>")
 		$('.'+obj.name).on('click', function(){
 			initTool([paint,pen,arrounder,rubber,eraser, inspirate]);// set tools false by default;
 			obj.active = true;

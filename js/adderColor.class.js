@@ -3,11 +3,12 @@ function AdderColor(name){
 }
 AdderColor.prototype = {
 	adderUI : function(obj){
+		$toolsZone.append('<h2> Choose your color (put color or color code) </h2>')
 		$toolsZone.append('<form class=\'tosubmit\'></form>'); // create toolzone for user
 		$tosubmit  = $('.tosubmit');
-		$tosubmit.append('<input class=\'adder\'></input>');// create input for colorUser
+		$tosubmit.append('<input class=\'adder form-control\' placeholder=\'put #colorcode or color\'></input>');// create input for colorUser
 		$adder = $('.adder');
-		$tosubmit.append('<button type=\'submit\'>ok</button>');// create validate button
+		$tosubmit.append('<button type=\'submit\' class=\'btn btn-default\'>ok</button>');// create validate button
 	},
 	addColor : function(obj){
 		$tosubmit.submit(function(evt){
@@ -21,7 +22,7 @@ AdderColor.prototype = {
 				
 				$('.userColor'+i).remove(); // remove previous Palete of user
 				
-				$('#toolsZone').append("<div class= userColor"+i+" data="+obj.color[i]+"></div>"); // set new color of user
+				$tosubmit.append("<div class= userColor"+i+" data="+obj.color[i]+"></div>"); // set new color of user
 
 				$userColor = $('.userColor'+i); // stack this color
 

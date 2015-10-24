@@ -1,6 +1,6 @@
 // main....
 $('document').ready(function(){
-	pixelStudio.init(pix,1000,userConfig, paint,pen,arrounder,rubber,eraser,colorPicker,adderColor,colorUser,inspirate);// params : (size, Pixel,userConfigtool, Painttool, Pentool, Rubbertool, Erasertool, Paletetool,AdderColortool, PaleteUsertool,inspirateModetool) last for create your palete
+	pixelStudio.init(pix,1800,userConfig, paint,pen,arrounder,rubber,eraser,colorPicker,adderColor,colorUser,inspirate);// params : (size, Pixel,userConfigtool, Painttool, Pentool, Rubbertool, Erasertool, Paletetool,AdderColortool, PaleteUsertool,inspirateModetool) last for create your palete
 
 });
 var pix = new Pixel("20" ,"20");// set pixel size

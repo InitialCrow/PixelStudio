@@ -3,8 +3,22 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+h2{
+	font-size: 1.4em;
+}
 #drawZone{
-	position: relative;
 	border: 5px solid black;
 	border-radius: 15px;
+}
+
+form{
+	padding-bottom: 10px;
+}
+input{
+	margin-right: 2px;
+	margin-bottom: 5px;
+}
+button{
+	margin-right: 2px;
+	margin-bottom: 20px!important;
 }
